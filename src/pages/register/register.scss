@@ -1,0 +1,54 @@
+.register {
+  background-color: rgb(193, 190, 255);
+
+  .card {
+    flex-direction: row;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;  // Ensure the width doesn't exceed the viewport on smaller screens
+
+    .bg-primary {
+      background: linear-gradient(rgba(39, 11, 96, 0.5), rgba(39, 11, 96, 0.5)),
+        url("https://images.pexels.com/photos/4881619/pexels-photo-4881619.jpeg?auto=compress&cs=tinysrgb&w=1600")
+          center;
+      background-size: cover;
+    }
+
+    h1 {
+      font-size: 100px;
+      line-height: 100px;
+      
+      @media (max-width: 768px) {  // Adjust for tablets
+        font-size: 80px;
+        line-height: 85px;
+      }
+
+      @media (max-width: 576px) {  // Adjust for mobile phones
+        font-size: 60px;
+        line-height: 65px;
+      }
+    }
+
+    span {
+      font-size: 14px;
+
+      @media (max-width: 576px) {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+.form-control::placeholder {
+  color: #d0d0d0;  // light grey color
+}
+
+.popover.bs-popover-auto[x-placement^="right"] .arrow::before,
+.popover.bs-popover-right .arrow::before {
+  left: 0;
+}
+
+.popover.bs-popover-auto[x-placement^="right"],
+.popover.bs-popover-right {
+  margin-left: 0.5rem;
+}

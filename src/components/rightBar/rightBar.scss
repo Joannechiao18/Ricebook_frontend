@@ -1,0 +1,59 @@
+@import "../../style.scss";
+
+.rightBar {
+  flex: 3;
+  @include themify($themes) {
+    background-color: themed("bg");
+    color: themed("textColor");
+    position: sticky;
+    top: 50px;
+    height: calc(100vh - 50px);
+    overflow-y: scroll;
+
+    .h5 {
+      color: gray;
+    }
+    
+    & img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    // ... any other custom style
+  }
+
+  // Mobile styles (default as you want the rightBar hidden on mobile)
+  display: none;
+
+  // Tablet styles
+  @media (min-width: 768px) and (max-width: 1024px) {
+    display: block; // or whatever style you want for the tablet view
+    width: 60%;  // You can adjust this to whatever width you'd like
+    // Add any other styles specific for tablet
+  }
+
+  // Desktop styles
+  @media (min-width: 1025px) {
+    display: block;
+    // Removed width: 30% since max-width will handle the sizing
+    height: calc(100vh - 50px);
+    // Add any other styles specific for desktop
+  }
+
+}
+
+.customTitle {
+  font-size: 15px;
+  color: black !important;
+  font-weight: bold;
+}
+
+.customContainer {
+  background-color: white;
+  margin-bottom: 1.5rem;
+  border-radius: 20px;
+  padding: 1rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+

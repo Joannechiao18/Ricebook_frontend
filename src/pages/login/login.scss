@@ -1,0 +1,43 @@
+.login {
+  background-color: rgb(193, 190, 255);
+
+  .card {
+    flex-direction: row-reverse; // This ensures that the two parts are side by side
+    border-radius: 10px;
+    overflow: hidden;
+
+    .bg-primary {
+      background: linear-gradient(rgba(39, 11, 96, 0.5), rgba(39, 11, 96, 0.5)),
+        url("https://images.pexels.com/photos/4881619/pexels-photo-4881619.jpeg?auto=compress&cs=tinysrgb&w=1600")
+          center;
+      background-size: cover;
+    }
+
+    h1 {
+      font-size: 100px;
+      line-height: 100px;
+    }
+
+    span {
+      font-size: 14px;
+    }
+  }
+}
+
+// Adjustments for smaller screens (like mobile devices)
+@media (max-width: 768px) { // Assuming that below 768px is when you want to make adjustments
+  .login .card {
+    h1 {
+      font-size: 70px; // Adjusting font-size for mobile
+      line-height: 70px;
+    }
+    
+    span {
+      font-size: 12px; // Adjusting font-size for mobile
+    }
+  }
+}
+
+.form-control::placeholder {
+  color: #d0d0d0; /* light grey color */
+}

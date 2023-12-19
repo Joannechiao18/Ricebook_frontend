@@ -1,0 +1,16 @@
+/* Customizing the size of the Bootstrap popover */
+.popover {
+    width: auto;  /* Change the width as per your requirement */
+    max-width: 100%;  /* This is to ensure the popover doesn't exceed its parent's width */
+    font-size: small;  /* Adjust the font size inside the popover */
+}
+
+.popover .popover-header {
+    font-size: 16px;  /* Adjust the font size of the popover header */
+    background-color: #f7f7f7;  /* Change background color of the header */
+}
+
+.popover .popover-body {
+    padding: .5em;  /* Adjust padding inside the popover body */
+}
+

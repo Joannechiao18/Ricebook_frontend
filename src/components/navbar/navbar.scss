@@ -1,0 +1,164 @@
+@import "../../style.scss"; // your global styles
+
+// Define or adjust these default values
+$border-color: #e0e0e0;
+$logo-color: #333;
+$text-color: #555;
+$search-icon-color: #938eef;
+$search-btn-border-color: #938eef;
+
+.navbar .d-flex.mx-auto .form-control {
+  width: 400px; // Set the desired width here
+  border-radius: 20px;
+
+  @include mobile {
+    width: 80%; // Adjust as desired for mobile view
+  }
+}
+
+.navbar {
+  display: flex;
+  left: 50%;
+  align-items: center; // This will vertically center-align all children, including the search bar.
+  padding: 10px 20px;
+  border-bottom: 1px solid $border-color;
+
+  .navbar-brand {
+    font-weight: bold;
+    font-size: 20px;
+    color: $logo-color;
+  }
+
+  .container-fluid {
+    display: flex;
+    align-items: center; // This ensures everything in the container is vertically centered.
+    justify-content: space-between; // This spreads out the elements equally across the horizontal space.
+  }
+
+  .d-flex.align-items-center {
+    gap: 20px;
+
+    @include mobile {
+      display: none;
+    }
+
+    div {
+      font-weight: 500;
+
+      @include tablet {
+        display: none;
+      }
+
+      img {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+.search-btn {
+  border-color: $search-icon-color;
+  background-color: transparent;
+
+  svg {
+    width: auto;
+    color: $search-icon-color;
+    border-radius: 50%;
+    margin-left: 5em;
+    transition: color 0.3s ease, border-color 0.3s ease;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: transparent;
+    background-color: $search-icon-color;
+
+    svg {
+      color: #7a75d6;
+      border: none;
+    }
+  }
+}
+
+.profile-dropdown .profile-toggle span {
+  margin-left: -0.5em;
+  font-weight: bold;
+  font-size: large;
+  color: black;
+}
+
+.profile-dropdown .profile-toggle {
+  text-decoration: none;
+  color: $text-color;
+  padding-right: -5em;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: $text-color;
+    outline: none;
+  }
+
+  img {
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.profile-dropdown .dropdown-menu .dropdown-item {
+  display: flex;
+  align-items: center;
+
+  // Adding transition for smooth changes
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+  &:focus,
+  &:hover {
+    // Updated the box-shadow to make it more rounded
+    box-shadow: 0 0 2px 2px rgba(237, 235, 235, 0.1),
+      0 0 2px 2px rgba(208, 202, 202, 0.1);
+    border-radius: 8px; // This will make the shadow appear more rounded
+  }
+}
+
+.profile-dropdown .dropdown-menu .dropdown-header {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px;
+
+  button.btn-primary {
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 5px;
+  }
+}
+
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.profile-picture:hover {
+  transform: scale(1.5);
+  border: 2px solid #938eef;
+  box-shadow: 0px 0px 10px rgba(147, 142, 239, 0.5);
+}
+
+.custom-dropdown-menu {
+  width: 200px; // or whatever width you feel looks best
+  .dropdown-item {
+    flex-direction: row; // Since we're using flex on the dropdown items, ensure they align horizontally
+  }
+}
